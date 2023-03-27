@@ -1,0 +1,81 @@
+section:has(.ex-circle-parent) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.ex-circle-parent{
+		width: 50px;
+		aspect-ratio: 1;
+		position: relative;
+		background: yellow;
+		border-radius: 50%;
+		animation: rotation 60s ease-in-out infinite;
+}
+
+.circle-nav{
+	--size: 25px;
+	--radius: 100px;
+	--angle: 0deg;
+	width: var(--size);
+	border-radius: 50%;
+	aspect-ratio: 1;
+	background-color: green;
+	position: absolute;
+	top: calc(var(--size) / 2);
+	left: calc(var(--size) / 2);
+	transform: 
+		translate(
+			calc(sin(var(--angle)) * var(--radius)),
+			calc(cos(var(--angle)) * var(--radius))
+		);
+}
+
+.circle-nav:nth-of-type(1){
+	--angle: 0deg;
+}
+
+.circle-nav:nth-of-type(2){
+	--angle: 45deg;
+}
+
+.circle-nav:nth-of-type(3){
+	--angle: 90deg;
+}
+
+.circle-nav:nth-of-type(4){
+	--angle: 135deg;
+}
+
+.circle-nav:nth-of-type(5){
+	--angle: 180deg;
+}
+
+.circle-nav:nth-of-type(6){
+	--angle: 225deg;
+}
+
+.circle-nav:nth-of-type(7){
+	--angle: 270deg;
+}
+
+.circle-nav:nth-of-type(8){
+	--angle: 315deg;
+}
+
+/* 
+
+KEYFRAMES
+
+*/
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
